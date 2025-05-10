@@ -1,0 +1,28 @@
+# Ignore everything
+*
+
+# But not these files/folders
+!.gitignore
+!.zshrc
+
+# Allow contents of these folders
+!.config/
+!.config/**/
+!.config/custom/**
+!.config/cava/**
+!.config/dconf/**
+!.config/gtk-3.0/**
+!.config/i3/**
+!.config/kitty/**
+!.config/neofetch/**
+!.config/nemo/**
+!.config/nvim/**
+!.config/picom/**
+!.config/polybar/**
+!.config/rofi/**
+!.config/wallpaper/**
+
+!.local/
+!.local/share/
+!.local/share/fonts/**
+
