@@ -34,8 +34,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- v3lock
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 # Set Wallpaper
-exec_always --no-startup-id feh --bg-scale ~/.config/i3/BG.jpg
-
+exec_always --no-startup-id feh --bg-scale ~/.config/i3/BG.png
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -230,6 +229,12 @@ for_window [class=".*"] border pixel 3
 # Gaps between windows
 gaps inner 10
 gaps outer 5
+
+# Focused window (pale blue border)
+client.focused          #a3c4f3 #a3c4f3 #000000 #a3c4f3 #a3c4f3
+
+# Unfocused window (darker blue border)
+client.unfocused        #1a2b3c #1a2b3c #000000 #1a2b3c #1a2b3c
 
 #Hide the default borders
 hide_edge_borders both

@@ -5,11 +5,11 @@
 [general]
 
 # Smoothing mode. Can be 'normal', 'scientific' or 'waves'. DEPRECATED as of 0.6.0
- mode = normal
-
+; mode = normal
+bars = 10
 # Accepts only non-negative values.
- framerate = 60
-visualizer = bar
+; framerate = 60
+
 # 'autosens' will attempt to decrease sensitivity if the bars peak. 1 = on, 0 = off
 # new as of 0.6.0 autosens of low values (dynamic range)
 # 'overshoot' allows bars to overshoot (in % of terminal height) without initiating autosens. DEPRECATED as of 0.6.0
@@ -18,13 +18,13 @@ visualizer = bar
 
 # Manual sensitivity in %. If autosens is enabled, this will only be the initial value.
 # 200 means double height. Accepts only non-negative values.
- sensitivity = 100
+; sensitivity = 100
 
 # The number of bars (0-512). 0 sets it to auto (fill up console).
 # Bars' width and space between bars in number of characters.
- bars = 0
- bar_width = 2
- bar_spacing = 1
+; bars = 10
+; bar_width = 2
+; bar_spacing = 1
 # bar_height is only used for output in "noritake" format
 ; bar_height = 32
 
@@ -72,15 +72,15 @@ visualizer = bar
 ; method = pulse
 ; source = auto
 
- method = pipewire
- source = auto
+; method = pipewire
+; source = auto
 
 ; method = alsa
 ; source = hw:Loopback,1
 
 ; method = fifo
 ; source = /tmp/mpd.fifo
-; sample_rate = 44100method = polybar
+; sample_rate = 44100
 ; sample_bits = 16
 
 ; method = shmem
@@ -107,34 +107,34 @@ visualizer = bar
 # 'sdl' uses the Simple DirectMedia Layer to render in a graphical context.
 # 'sdl_glsl' uses SDL to create an OpenGL context. Write your own shaders or
 # use one of the predefined ones.
- method = raw 
+method = raw 
 
 # Orientation of the visualization. Can be 'bottom', 'top', 'left' or 'right'.
 # Default is 'bottom'. Other orientations are only supported on sdl and ncruses
 # output. Note: many fonts have weird glyphs for 'top' and 'right' characters,
 # which can make ncurses not look right.
- orientation = bottom
+; orientation = bottom
 
 # Visual channels. Can be 'stereo' or 'mono'.
 # 'stereo' mirrors both channels with low frequencies in center.
 # 'mono' outputs left to right lowest to highest frequencies.
 # 'mono_option' set mono to either take input from 'left', 'right' or 'average'.
 # set 'reverse' to 1 to display frequencies the other way around.
- channels = mono 
- mono_option = average
- reverse = 0
+; channels = stereo
+; mono_option = average
+; reverse = 0
 
 # Raw output target. A fifo will be created if target does not exist.
-; raw_target = /tmp/cava.fifo
+raw_target = /dev/stdout
 
 # Raw data format. Can be 'binary' or 'ascii'.
-; data_format = ascii 
+data_format = ascii 
 
 # Binary bit format, can be '8bit' (0-255) or '16bit' (0-65530).
 ; bit_format = 16bit
 
 # Ascii max value. In 'ascii' mode range will run from 0 to value specified here
-; ascii_max_range = 1000
+ascii_max_range = 7 
 
 # Ascii delimiters. In ascii format each bar and frame is separated by a delimiters.
 # Use decimal value in ascii table (i.e. 59 = ';' and 10 = '\n' (line feed)).
@@ -170,27 +170,27 @@ visualizer = bar
 # Or defined by hex code '#xxxxxx' (hex code must be within ''). User defined colors requires
 # a terminal that can change color definitions such as Gnome-terminal or rxvt.
 # default is to keep current terminal color
- background = default
- foreground = default
+; background = default
+; foreground = default
 
 # SDL and sdl_glsl only support hex code colors, these are the default:
-; background = '#111111'
+ background = '#111111'
 ; foreground = '#33ffff'
 
 
 # Gradient mode, only hex defined colors are supported,
 # background must also be defined in hex or remain commented out. 1 = on, 0 = off.
 # You can define as many as 8 different colors. They range from bottom to top of screen
-; gradient = 0
-; gradient_count = 8
-; gradient_color_1 = '#59cc33'
-; gradient_color_2 = '#80cc33'
-; gradient_color_3 = '#a6cc33'
-; gradient_color_4 = '#cccc33'
-; gradient_color_5 = '#cca633'
-; gradient_color_6 = '#cc8033'
-; gradient_color_7 = '#cc5933'
-; gradient_color_8 = '#cc3333'
+ gradient = 1
+ gradient_count = 8
+ gradient_color_1 = '#59cc33'
+ gradient_color_2 = '#80cc33'
+ gradient_color_3 = '#a6cc33'
+ gradient_color_4 = '#cccc33'
+ gradient_color_5 = '#cca633'
+ gradient_color_6 = '#cc8033'
+ gradient_color_7 = '#cc5933'
+ gradient_color_8 = '#cc3333'
 
 
 
@@ -218,7 +218,7 @@ visualizer = bar
 # Noise reduction, int 0 - 100. default 77
 # the raw visualization is very noisy, this factor adjusts the integral and gravity filters to keep the signal smooth
 # 100 will be very slow and smooth, 0 will be fast but noisy.
- noise_reduction = 77
+; noise_reduction = 77
 
 
 [eq]
@@ -226,8 +226,8 @@ visualizer = bar
 # This one is tricky. You can have as much keys as you want.
 # Remember to uncomment more than one key! More keys = more precision.
 # Look at readme.md on github for further explanations and examples.
- 1 = 1 # bass
+; 1 = 1 # bass
 ; 2 = 1
- 3 = 1 # midtone
+; 3 = 1 # midtone
 ; 4 = 1
- 5 = 1 # treble
+; 5 = 1 # treble

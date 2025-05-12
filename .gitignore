@@ -21,6 +21,8 @@
 !.config/polybar/**
 !.config/rofi/**
 !.config/wallpaper/**
+!.config/.oh-my-zsh/
+!.config/.oh-my-zsh/**
 
 !.local/
 !.local/share/
