@@ -28,3 +28,5 @@
 !.local/share/
 !.local/share/fonts/**
 
+!fs0s_grub_theme-/
+!fs0s_grub_theme-/**
